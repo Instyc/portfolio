@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ferran Solis Chorvat — Portfolio Profesional
 
-## Getting Started
+Landing page profesional y minimalista orientada a transmitir un perfil técnico enfocado en **desarrollo backend**, **arquitectura de software** y **sistemas en producción**.
 
-First, run the development server:
+Incluye soporte de internacionalización (i18n) en tiempo real, descarga dinámica de currículum según idioma y showcase de proyectos reales con demos interactivas.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Tecnologías
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework:** [Next.js 16](https://nextjs.org/) (App Router, Turbopack)
+- **Lenguaje:** [TypeScript](https://www.typescriptlang.org/)
+- **Librería UI:** [React 19](https://react.dev/)
+- **Estilos:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **Iconografía:** [React Icons](https://react-icons.github.io/react-icons/) & [Lucide React](https://lucide.dev/)
+- **Tipografía:** Geist Sans & Geist Mono
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ✨ Características Principales
 
-To learn more about Next.js, take a look at the following resources:
+- **Internacionalización (i18n):** Selector interactivo bilingüe (Español / English) mediante React Context API, con persistencia y banderas vectoriales nativas en SVG.
+- **Descarga Dinámica de CV:** El botón de descarga adapta el archivo según el idioma activo (`CV Ferran Solis Chorvat.pdf` / `CV Ferran Solis Chorvat - EN.pdf`).
+- **Showcase de Proyectos Reales:** Detalle de arquitectura y reglas de negocio de sistemas en producción (Ministerio de Salud del Chaco, Municipalidad de San Bernardo, UNCAus) con enlace directo a demo operativa.
+- **Acceso Directo y Rápido:** Copia al portapapeles interactiva para correo de contacto sin redirección a clientes de correo externos.
+- **Aesthetic Dark Mode:** Paleta basada en tonos pizarra profunda con acentos esmeralda y cian, optimizada para legibilidad y estética técnica.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Instalación y Uso Local
 
-## Deploy on Vercel
+1. **Clonar el repositorio:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   git clone git@github.com:Instyc/portfolio.git
+   cd portfolio
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **Instalar dependencias:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Iniciar el servidor de desarrollo:**
+
+   ```bash
+   npm run dev
+   ```
+
+4. Abrir [http://localhost:3000](http://localhost:3000) en el navegador.
+
+---
+
+## 📦 Scripts Disponibles
+
+- `npm run dev` — Inicia el servidor de desarrollo con Turbopack.
+- `npm run build` — Compila la versión estática de producción.
+- `npm run start` — Levanta la versión compilada para producción.
+- `npm run lint` — Ejecuta el linter ESLint.
+
+---
+
+## 📬 Contacto
+
+- **GitHub:** [@Instyc](https://github.com/Instyc/)
+- **LinkedIn:** [Ferran Solis Chorvat](https://linkedin.com/in/ferran-solis-chorvat)
+- **Email:** [ferransolischorvat@gmail.com](mailto:ferransolischorvat@gmail.com)
+- **Ubicación:** Argentina
