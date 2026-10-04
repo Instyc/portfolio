@@ -2,122 +2,63 @@
 
 import React, { useState } from "react";
 import { useLanguage } from "@/lib/i18n/context";
-import {
-  Mail,
-  MapPin,
-  Check,
-  ArrowUp,
-} from "lucide-react";
-import { LinkedinIcon, GithubIcon } from "@/components/icons";
+import { ArrowUpRight } from "lucide-react";
 
 export function Footer() {
   const { t } = useLanguage();
   const [copied, setCopied] = useState(false);
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText("ferransolischorvat@gmail.com");
+    navigator.clipboard.writeText(t.contact.email);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
-    <footer id="contacto" className="relative pt-16 pb-12 border-t border-slate-800/80 bg-slate-950/60">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div className="pb-10">
-          <div className="space-y-1 mb-6">
-            <span className="text-xs font-mono uppercase tracking-wider text-emerald-400">
-              {t.nav.contact}
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-              Ferran Solis Chorvat
+    <footer id="contacto" className="border-t border-[#26292E] bg-[#0E0F11] mt-16 md:mt-24">
+      <div className="mx-auto max-w-[920px] px-6 sm:px-8 py-16 md:py-20 space-y-12">
+        <div className="space-y-6">
+          <div className="space-y-2">
+            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-[#E7E5E1]">
+              {t.contact.heading}
             </h2>
+            <p className="text-sm text-[#A3A19C]">
+              {t.contact.availability} · {t.contact.location}
+            </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-300">
+          <div className="flex flex-wrap items-baseline gap-4 pt-1">
+            <a
+              href={`mailto:${t.contact.email}`}
+              className="text-xl sm:text-2xl font-medium text-[#6FB58F] underline underline-offset-4 hover:text-[#82C8A3] transition-colors duration-150"
+            >
+              {t.contact.email}
+            </a>
+
             <button
               type="button"
               onClick={copyToClipboard}
-              className="flex items-center gap-2.5 p-2.5 rounded-lg border border-slate-800 bg-slate-900/60 hover:border-emerald-500/50 hover:text-emerald-300 transition-all cursor-pointer"
-              title="Click para copiar email"
+              className="text-sm text-[#A3A19C] hover:text-[#E7E5E1] underline underline-offset-4 cursor-pointer transition-colors duration-150 py-1"
             >
-              {copied ? (
-                <>
-                  <Check className="size-4 text-emerald-400 shrink-0" />
-                  <span className="text-emerald-300 font-semibold">{t.contact.emailCopied}</span>
-                </>
-              ) : (
-                <>
-                  <Mail className="size-4 text-emerald-400 shrink-0" />
-                  <span>ferransolischorvat@gmail.com</span>
-                </>
-              )}
+              {copied ? t.contact.emailCopied : t.contact.copyEmail}
             </button>
+          </div>
 
+          <div className="pt-2">
             <a
-              href="https://linkedin.com/in/ferran-solis-chorvat"
+              href={t.contact.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 p-2.5 rounded-lg border border-slate-800 bg-slate-900/60 hover:border-sky-500/50 hover:text-sky-300 transition-all"
+              className="inline-flex items-center gap-1 text-[15px] text-[#A3A19C] hover:text-[#E7E5E1] underline underline-offset-4 transition-colors duration-150"
             >
-              <LinkedinIcon size={16} />
               <span>LinkedIn</span>
+              <ArrowUpRight className="size-4" />
             </a>
-
-            <a
-              href="https://github.com/Instyc/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 p-2.5 rounded-lg border border-slate-800 bg-slate-900/60 hover:border-slate-600 hover:text-white transition-all"
-            >
-              <GithubIcon size={16} />
-              <span>GitHub</span>
-            </a>
-
-            <div className="flex items-center gap-2 p-2.5 rounded-lg border border-slate-800/80 bg-slate-900/40 text-slate-400">
-              <MapPin className="size-4 text-indigo-400 shrink-0" />
-              <span>Argentina</span>
-            </div>
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 text-xs text-slate-500 border-t border-slate-800/50">
-          <span className="font-mono text-slate-400">
-            © {new Date().getFullYear()} Ferran Solis Chorvat
-          </span>
-
-          <div className="flex items-center gap-4">
-            <a
-              href="https://linkedin.com/in/ferran-solis-chorvat"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-400 hover:text-sky-400 transition-colors"
-              aria-label="LinkedIn"
-            >
-              <LinkedinIcon size={16} />
-            </a>
-            <a
-              href="https://github.com/Instyc/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-400 hover:text-white transition-colors"
-              aria-label="GitHub"
-            >
-              <GithubIcon size={16} />
-            </a>
-            <button
-              type="button"
-              onClick={scrollToTop}
-              title="Volver arriba"
-              aria-label="Volver arriba"
-              className="flex size-7 items-center justify-center rounded border border-slate-800 bg-slate-900 text-slate-400 hover:text-white hover:border-slate-700 transition-colors ml-2 cursor-pointer"
-            >
-              <ArrowUp className="size-3.5" />
-            </button>
-          </div>
+        <div className="pt-8 border-t border-[#26292E] text-sm text-[#A3A19C]">
+          © {new Date().getFullYear()} Ferran Solis Chorvat
         </div>
       </div>
     </footer>

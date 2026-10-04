@@ -16,6 +16,7 @@ export interface TranslationDictionary {
     title: string;
     coreTech: string;
     description: string;
+    statsLine: string;
     primaryCta: string;
     downloadCv: string;
     cvFilename: string;
@@ -60,6 +61,7 @@ export interface TranslationDictionary {
       title: string;
       organization: string;
       period: string;
+      metadata: string;
       description: string;
       highlights: string[];
       tech: string[];
@@ -90,10 +92,12 @@ export interface TranslationDictionary {
   contact: {
     sectionBadge: string;
     title: string;
+    heading: string;
     subtitle: string;
     email: string;
     linkedin: string;
     location: string;
+    availability: string;
     copyEmail: string;
     emailCopied: string;
     sendMessage: string;
@@ -113,12 +117,14 @@ export const translations: Record<Language, TranslationDictionary> = {
       availableForWork: "Disponible para proyectos",
     },
     hero: {
-      statusBadge: "Enfocado en Backend & Arquitectura de Software",
+      statusBadge: "Enfocado en Backend y Arquitectura de Software",
       name: "Ferran Solis Chorvat",
       title: "Desarrollador Full Stack y Analista de Sistemas",
       coreTech: "React · TypeScript · NestJS · PostgreSQL",
       description:
-        "Perfil con experiencia en diseño, desarrollo y mantenimiento de sistemas web en producción para organismos públicos y empresas. Experiencia end-to-end desde el relevamiento de requisitos y modelado de datos hasta el despliegue y mantenimiento, con especial énfasis en reglas de negocio y arquitecturas escalables.",
+        "Diseño, desarrollo y mantengo sistemas web en producción para organismos públicos y empresas. Me encargo del ciclo completo, desde el relevamiento y modelado de datos hasta el despliegue y soporte continuo. Trabajo con foco en reglas de negocio complejas y consistencia de datos.",
+      statsLine:
+        "4 hospitales de referencia y 5 servicios regionales en producción · +4.000 solicitudes registradas en un sistema municipal",
       primaryCta: "Explorar Proyectos",
       downloadCv: "Descargar CV",
       cvFilename: "cv-ferran-solis-chorvat.pdf",
@@ -129,10 +135,10 @@ export const translations: Record<Language, TranslationDictionary> = {
       sectionBadge: "Stack Tecnológico",
       title: "Herramientas y Tecnologías",
       subtitle:
-        "Conjunto de tecnologías aplicadas en sistemas en producción con foco en consistencia de datos, rendimiento y robustez.",
+        "Tecnologías que utilizo a diario en sistemas en producción.",
       categories: {
         backend: {
-          title: "Backend & Datos",
+          title: "Backend y Datos",
           description: "Arquitectura modular, transaccionalidad y APIs seguras",
           skills: [
             "NestJS",
@@ -145,7 +151,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           ],
         },
         frontend: {
-          title: "Frontend & UI",
+          title: "Frontend",
           description: "Interfaces de alto rendimiento con renderizado optimizado",
           skills: [
             "React",
@@ -157,7 +163,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           ],
         },
         cloud: {
-          title: "Cloud & DevOps",
+          title: "Cloud y DevOps",
           description: "Infraestructura cloud, serverless y despliegue continuo",
           skills: [
             "Docker",
@@ -170,7 +176,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           ],
         },
         tools: {
-          title: "Herramientas & Prácticas",
+          title: "Herramientas y Prácticas",
           description: "Flujos de trabajo colaborativos y documentación de APIs",
           skills: [
             "Git",
@@ -185,24 +191,25 @@ export const translations: Record<Language, TranslationDictionary> = {
       },
     },
     projects: {
-      sectionBadge: "Experiencia & Proyectos",
-      title: "Soluciones de Software en Producción",
+      sectionBadge: "Experiencia y Proyectos",
+      title: "Proyectos",
       subtitle:
-        "Sistemas reales desarrollados para resolver problemáticas complejas de gestión, trazabilidad y asistencia social.",
+        "Sistemas en producción para el sector público y proyectos freelance.",
       liveDemoBadge: "Demo Viva Disponible",
       viewDemo: "Ver Demo Operativa",
       featured: {
-        tag: "Proyecto Principal & Demo Operativa",
+        tag: "Proyecto Principal y Demo Operativa",
         title: "Sistema de Gestión y Trazabilidad de Medicamentos Sensibles",
         organization: "Ministerio de Salud del Chaco · Subsecretaría de Articulación Sanitaria",
         period: "2024 – 2026",
+        metadata: "2024 – 2026 · Demo disponible",
         description:
           "Desarrollo integral de un sistema para la gestión y trazabilidad de medicamentos sensibles, diseñado para la red sanitaria del interior del Chaco y utilizado en producción por 4 hospitales de referencia y 5 servicios regionales de distribución.",
         highlights: [
-          "Diseñé e implementé la gestión transaccional de stock, dispensaciones y transferencias entre establecimientos, preservando la trazabilidad mediante movimientos y auditoría detallada.",
-          "Automaticé la carga de remitos mediante parsing de PDFs estructurados, identificando medicamentos, presentaciones, cantidades, lotes y vencimientos, con validación humana previa a su persistencia.",
-          "Implementé autenticación y autorización por roles y establecimiento, validación de datos y control de concurrencia en operaciones críticas de dispensación.",
-          "Desarrollé y mantuve la solución end-to-end con React, TypeScript, NestJS, PostgreSQL y TypeORM, desplegada en Vercel, AWS Lambda y RDS.",
+          "Centralicé la gestión transaccional de stock, dispensaciones y transferencias entre centros de salud, garantizando trazabilidad completa con auditoría de movimientos.",
+          "Automaticé el ingreso de remitos mediante parsing de PDFs con extracción de lotes, vencimientos y cantidades, reduciendo la carga manual con validación previa.",
+          "Aseguré el control de acceso y concurrencia por roles y establecimiento en operaciones críticas de dispensación.",
+          "Construí la solución de punta a punta con React, TypeScript, NestJS y PostgreSQL, desplegada en AWS Lambda y RDS.",
         ],
         tech: [
           "React",
@@ -217,6 +224,27 @@ export const translations: Record<Language, TranslationDictionary> = {
         demoUrl: "https://insumos-medicos-demo.vercel.app/",
       },
       items: [
+        {
+          tag: "Gestión Documental",
+          title: "Sistema de Gestión Documental para Compraventa de Vehículos",
+          organization: "Proyecto Freelance",
+          period: "2024",
+          stats: "Automatización y WebSockets",
+          description:
+            "Plataforma integral orientada a la confección y validación documental automatizada en procesos de compraventa automotriz.",
+          highlights: [
+            "Automaticé la generación de documentación sobre formularios PDF existentes, implementando posicionamiento, medición y adaptación dinámica del texto al espacio disponible.",
+            "Implementé workflows de revisión y validación con notificaciones en tiempo real mediante WebSockets y control de acceso por roles y sucursal.",
+          ],
+          tech: [
+            "NestJS",
+            "React",
+            "TypeScript",
+            "WebSockets",
+            "PDF Parsing y Canvas",
+            "PostgreSQL",
+          ],
+        },
         {
           tag: "Sector Público",
           title: "Sistema de Gestión de Solicitudes de Asistencia Social",
@@ -237,27 +265,6 @@ export const translations: Record<Language, TranslationDictionary> = {
             "PostgreSQL",
             "Amazon S3",
             "PDF Generation",
-          ],
-        },
-        {
-          tag: "Gestión Documental",
-          title: "Sistema de Gestión Documental para Compraventa de Vehículos",
-          organization: "Proyecto Freelance",
-          period: "2024",
-          stats: "Automatización & WebSockets",
-          description:
-            "Plataforma integral orientada a la confección y validación documental automatizada en procesos de compraventa automotriz.",
-          highlights: [
-            "Automaticé la generación de documentación sobre formularios PDF existentes, implementando posicionamiento, medición y adaptación dinámica del texto al espacio disponible.",
-            "Implementé workflows de revisión y validación con notificaciones en tiempo real mediante WebSockets y control de acceso por roles y sucursal.",
-          ],
-          tech: [
-            "NestJS",
-            "React",
-            "TypeScript",
-            "WebSockets",
-            "PDF Parsing & Canvas",
-            "PostgreSQL",
           ],
         },
         {
@@ -303,10 +310,12 @@ export const translations: Record<Language, TranslationDictionary> = {
     contact: {
       sectionBadge: "Contacto Directo",
       title: "Contacto",
+      heading: "¿Tenés un proyecto? Escribime.",
       subtitle: "Desarrollo backend y arquitectura de software.",
       email: "ferransolischorvat@gmail.com",
       linkedin: "https://linkedin.com/in/ferran-solis-chorvat",
       location: "Argentina",
+      availability: "Disponible para proyectos freelance",
       copyEmail: "Copiar Correo",
       emailCopied: "¡Copiado al portapapeles!",
       sendMessage: "Escribirme un Email",
@@ -329,7 +338,9 @@ export const translations: Record<Language, TranslationDictionary> = {
       title: "Full Stack Developer & Systems Analyst",
       coreTech: "React · TypeScript · NestJS · PostgreSQL",
       description:
-        "Full Stack Developer with hands-on experience designing, developing, and maintaining production web systems for public organizations and private companies. End-to-end expertise spanning requirements discovery and data modeling to deployment and maintenance, with a keen focus on business domain logic and scalable architectures.",
+        "I design, build, and maintain production web systems for public agencies and private companies. I handle the end-to-end lifecycle, from requirements gathering and data modeling to deployment and ongoing support. My focus is on robust business rules and data integrity.",
+      statsLine:
+        "4 reference hospitals and 5 regional services in production · +4,000 requests registered in a municipal system",
       primaryCta: "Explore Projects",
       downloadCv: "Download CV",
       cvFilename: "cv-ferran-solis-chorvat-en.pdf",
@@ -340,7 +351,7 @@ export const translations: Record<Language, TranslationDictionary> = {
       sectionBadge: "Tech Stack",
       title: "Tools & Technologies",
       subtitle:
-        "Technology stack utilized across production systems with an emphasis on data integrity, high throughput, and architectural robustness.",
+        "Technologies I work with daily across production systems.",
       categories: {
         backend: {
           title: "Backend & Data",
@@ -356,7 +367,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           ],
         },
         frontend: {
-          title: "Frontend & UI",
+          title: "Frontend",
           description: "High-performance client interfaces with optimized rendering",
           skills: [
             "React",
@@ -381,7 +392,7 @@ export const translations: Record<Language, TranslationDictionary> = {
           ],
         },
         tools: {
-          title: "Tools & Engineering Practices",
+          title: "Tools & Practices",
           description: "Collaborative workflows, API contracts, and domain modeling",
           skills: [
             "Git",
@@ -397,9 +408,9 @@ export const translations: Record<Language, TranslationDictionary> = {
     },
     projects: {
       sectionBadge: "Experience & Projects",
-      title: "Production Software Solutions",
+      title: "Projects",
       subtitle:
-        "Real-world systems engineered to solve mission-critical logistical, traceability, and civic welfare operations.",
+        "Production systems for the public sector and freelance clients.",
       liveDemoBadge: "Live Demo Available",
       viewDemo: "View Live Demo",
       featured: {
@@ -407,13 +418,14 @@ export const translations: Record<Language, TranslationDictionary> = {
         title: "Sensitive Medication Management & Traceability System",
         organization: "Chaco Ministry of Health · Healthcare Articulation Subsecretariat",
         period: "2024 – 2026",
+        metadata: "2024 – 2026 · Demo available",
         description:
           "End-to-end development of an enterprise medication traceability system designed for the provincial healthcare network, operating in production across 4 reference hospitals and 5 regional distribution centers.",
         highlights: [
-          "Architected and implemented transactional stock control, dispensing, and inter-facility transfers, preserving traceability with immutable logs and detailed auditing.",
-          "Automated receipt ingestion via structured PDF parsing, extracting drugs, dosages, quantities, batch numbers, and expirations with human-in-the-loop validation.",
-          "Built role-based and facility-scoped authorization, schema validation, and concurrency controls for critical dispensing operations.",
-          "Engineered the full solution with React, TypeScript, NestJS, PostgreSQL, and TypeORM, deployed on Vercel, AWS Lambda, and AWS RDS.",
+          "Centralized transactional inventory, dispensing, and inter-facility transfers, ensuring end-to-end traceability with detailed audit logs.",
+          "Automated delivery slip intake via structured PDF parsing for batches, expirations, and quantities, cutting manual data entry with pre-save validation.",
+          "Enforced role- and facility-scoped authorization along with concurrency controls for critical dispensing operations.",
+          "Engineered the full solution end-to-end using React, TypeScript, NestJS, and PostgreSQL, deployed on AWS Lambda and RDS.",
         ],
         tech: [
           "React",
@@ -428,6 +440,27 @@ export const translations: Record<Language, TranslationDictionary> = {
         demoUrl: "https://insumos-medicos-demo.vercel.app/",
       },
       items: [
+        {
+          tag: "Document Automation",
+          title: "Vehicle Sales Document Management System",
+          organization: "Freelance Project",
+          period: "2024",
+          stats: "Real-time & WebSockets",
+          description:
+            "Comprehensive platform for legal automotive sales paperwork automation, real-time validation, and branch office workflow management.",
+          highlights: [
+            "Automated PDF document compilation directly over existing official legal forms with precise coordinates, metric bounds, and text wrapping.",
+            "Delivered real-time review workflows with instantaneous WebSocket notifications and branch-segmented access control.",
+          ],
+          tech: [
+            "NestJS",
+            "React",
+            "TypeScript",
+            "WebSockets",
+            "PDF Parsing & Canvas",
+            "PostgreSQL",
+          ],
+        },
         {
           tag: "Public Sector",
           title: "Social Assistance Request Management System",
@@ -448,27 +481,6 @@ export const translations: Record<Language, TranslationDictionary> = {
             "PostgreSQL",
             "Amazon S3",
             "PDF Generation",
-          ],
-        },
-        {
-          tag: "Document Automation",
-          title: "Vehicle Sales Document Management System",
-          organization: "Freelance Project",
-          period: "2024",
-          stats: "Real-time & WebSockets",
-          description:
-            "Comprehensive platform for legal automotive sales paperwork automation, real-time validation, and branch office workflow management.",
-          highlights: [
-            "Automated PDF document compilation directly over existing official legal forms with precise coordinates, metric bounds, and text wrapping.",
-            "Delivered real-time review workflows with instantaneous WebSocket notifications and branch-segmented access control.",
-          ],
-          tech: [
-            "NestJS",
-            "React",
-            "TypeScript",
-            "WebSockets",
-            "PDF Parsing & Canvas",
-            "PostgreSQL",
           ],
         },
         {
@@ -514,10 +526,12 @@ export const translations: Record<Language, TranslationDictionary> = {
     contact: {
       sectionBadge: "Direct Contact",
       title: "Contact",
+      heading: "Have a project in mind? Get in touch.",
       subtitle: "Backend engineering and software architecture.",
       email: "ferransolischorvat@gmail.com",
       linkedin: "https://linkedin.com/in/ferran-solis-chorvat",
       location: "Argentina",
+      availability: "Available for freelance projects",
       copyEmail: "Copy Email",
       emailCopied: "Copied to clipboard!",
       sendMessage: "Send an Email",
