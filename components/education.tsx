@@ -20,7 +20,7 @@ export function Education() {
             {education.title}
           </h2>
           <p className="text-base text-slate-300">
-            {education.institution} · Argentina
+            {education.institution}
           </p>
         </div>
 

@@ -36,25 +36,25 @@ export function TechStack() {
       title: categories.backend.title,
       icon: Server,
       accent: "text-emerald-400",
-      skills: categories.backend.skills.join(" · "),
+      skills: categories.backend.skills,
     },
     {
       title: categories.frontend.title,
       icon: Layout,
       accent: "text-sky-400",
-      skills: categories.frontend.skills.join(" · "),
+      skills: categories.frontend.skills,
     },
     {
       title: categories.cloud.title,
       icon: Cloud,
       accent: "text-amber-400",
-      skills: categories.cloud.skills.join(" · "),
+      skills: categories.cloud.skills,
     },
     {
       title: categories.tools.title,
       icon: Wrench,
       accent: "text-purple-400",
-      skills: categories.tools.skills.join(" · "),
+      skills: categories.tools.skills,
     },
   ];
 
@@ -118,8 +118,15 @@ export function TechStack() {
                     {sec.title}
                   </span>
                 </div>
-                <div className="md:col-span-8 text-sm font-mono text-slate-300 leading-relaxed">
-                  {sec.skills}
+                <div className="md:col-span-8 flex flex-wrap items-center gap-x-2 gap-y-1.5 text-sm font-mono text-slate-300 leading-relaxed">
+                  {sec.skills.map((skill, sIdx) => (
+                    <React.Fragment key={skill}>
+                      <span className="whitespace-nowrap">{skill}</span>
+                      {sIdx < sec.skills.length - 1 && (
+                        <span className="text-slate-600 select-none">·</span>
+                      )}
+                    </React.Fragment>
+                  ))}
                 </div>
               </div>
             );

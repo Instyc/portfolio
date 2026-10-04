@@ -121,8 +121,8 @@ export const translations: Record<Language, TranslationDictionary> = {
         "Perfil con experiencia en diseño, desarrollo y mantenimiento de sistemas web en producción para organismos públicos y empresas. Experiencia end-to-end desde el relevamiento de requisitos y modelado de datos hasta el despliegue y mantenimiento, con especial énfasis en reglas de negocio y arquitecturas escalables.",
       primaryCta: "Explorar Proyectos",
       downloadCv: "Descargar CV",
-      cvFilename: "CV Ferran Solis Chorvat.pdf",
-      cvHref: "/CV Ferran Solis Chorvat.pdf",
+      cvFilename: "cv-ferran-solis-chorvat.pdf",
+      cvHref: "/cv-ferran-solis-chorvat.pdf",
       location: "Argentina",
     },
     techStack: {
@@ -332,8 +332,8 @@ export const translations: Record<Language, TranslationDictionary> = {
         "Full Stack Developer with hands-on experience designing, developing, and maintaining production web systems for public organizations and private companies. End-to-end expertise spanning requirements discovery and data modeling to deployment and maintenance, with a keen focus on business domain logic and scalable architectures.",
       primaryCta: "Explore Projects",
       downloadCv: "Download CV",
-      cvFilename: "CV Ferran Solis Chorvat - EN.pdf",
-      cvHref: "/CV Ferran Solis Chorvat - EN.pdf",
+      cvFilename: "cv-ferran-solis-chorvat-en.pdf",
+      cvHref: "/cv-ferran-solis-chorvat-en.pdf",
       location: "Argentina",
     },
     techStack: {

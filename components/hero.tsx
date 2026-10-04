@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useLanguage } from "@/lib/i18n/context";
-import { Download, FolderGit2, MapPin, Mail } from "lucide-react";
+import { Download, FolderGit2, Mail } from "lucide-react";
 import {
   LinkedinIcon,
   GithubIcon,
@@ -61,10 +61,6 @@ export function Hero() {
             <div className="flex items-center gap-2">
               <PostgresIcon size={18} />
               <span>PostgreSQL</span>
-            </div>
-            <div className="flex items-center gap-1.5 text-xs font-mono text-slate-400 sm:ml-2">
-              <MapPin className="size-3.5 text-slate-400" />
-              <span>{t.hero.location}</span>
             </div>
           </div>
 
